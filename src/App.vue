@@ -90,6 +90,7 @@ export default {
     <button type="button" @click="handleClick">Salvar</button>
   </form>
 
+  <div>exemplo</div>
   <RouterView />
 </template>
 
