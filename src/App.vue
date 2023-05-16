@@ -106,6 +106,7 @@ form > * {
 }
 
 button {
-  color: green;
+  color: blue;
+  display: flex;
 }
 </style>
