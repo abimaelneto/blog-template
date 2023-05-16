@@ -1,0 +1,15 @@
+
+- navegação entre páginas 
+- buscar posts
+- listar posts(feed)
+- criar posts
+- editar posts
+- deletar posts
+
+
+
+POST (CRUD)
+- create 
+- read
+- update
+- delete
