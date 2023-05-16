@@ -98,4 +98,8 @@ form {
 form > * {
   margin: 1rem;
 }
+
+button {
+  color: green;
+}
 </style>
