@@ -108,5 +108,8 @@ form > * {
 button {
   color: blue;
   display: flex;
+
+  margin: 2rem;
+  padding: 2rem;
 }
 </style>
