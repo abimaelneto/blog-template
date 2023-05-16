@@ -92,6 +92,7 @@ export default {
 
   <input type="text" placeholder="Qual post você deseja editar?" />
 
+  <div>exemplo</div>
   <RouterView />
 </template>
 
