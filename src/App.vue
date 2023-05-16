@@ -20,6 +20,7 @@ export default {
         title: "",
         content: "",
       },
+      search: "",
     };
   },
   methods: {
@@ -56,6 +57,9 @@ export default {
 
       // quando estiver executando, fica assim:
       // this.formData['title'] = "Meu titulo mais legal"
+    },
+    filterBySearch() {
+      posts.filter((p) => p.title === this.search);
     },
   },
 };
