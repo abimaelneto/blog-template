@@ -93,6 +93,7 @@ export default {
 form {
   display: flex;
   flex-direction: column;
+  background: orange;
 }
 
 form > * {
