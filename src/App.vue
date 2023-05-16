@@ -86,6 +86,8 @@ export default {
     <button type="button" @click="handleClick">Salvar</button>
   </form>
 
+  <input type="text" placeholder="Qual post você deseja editar?" />
+
   <RouterView />
 </template>
 
