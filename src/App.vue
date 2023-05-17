@@ -1,125 +1,26 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
-
+import "@/assets/base.css";
 export default {
   data() {
     return {
-      posts: [
-        {
-          title: "Meu Primeiro Post",
-          datetime: Date.now(),
-          content: "Postar aqui é muito legal",
-        },
-        {
-          title: "Meu Segundo Post",
-          datetime: Date.now(),
-          content: "Postar aqui não é tão legal",
-        },
-      ],
-      formData: {
-        title: "",
-        content: "",
-      },
-      search: "",
+      posts: [],
     };
   },
-  computed: {
-    filteredPosts() {
-      // se search estiver vazio, retorne a lista completa de posts
-      if (!this.search) return this.posts;
-
-      //se tiver qualquer coisa em search, faz o filtro
-      const listaFiltrada = [];
-
-      for (const post of this.posts) {
-        if (post.title.includes(this.search)) {
-          listaFiltrada.push(post);
-        }
-      }
-
-      return listaFiltrada;
-    },
-  },
   methods: {
-    handleClick(event) {
-      //adicionar o post à lista de posts
-      const now = new Date();
-
-      const dataDaPostagem = `${now.getDate()}/${
-        now.getMonth() + 1
-      }/${now.getFullYear()}`;
-
-      // //método 1
-      // this.posts[this.posts.length] = {
-      //   title: this.formData.title,
-      //   content: this.formData.content,
-      // };
-
-      // //método 2
-      this.posts.push({
-        title: this.formData.title,
-        content: this.formData.content,
-        datetime: dataDaPostagem,
-      });
-
-      this.formData = {
-        title: "",
-        content: "",
-      };
-    },
-
-    handleInputChange(event) {
-      const { name, value } = event.target;
-      this.formData[name] = value;
-
-      // quando estiver executando, fica assim:
-      // this.formData['title'] = "Meu titulo mais legal"
+    addPost(newPost) {
+      //adicionar o novo post à lista de posts
+      this.posts.push(newPost);
     },
   },
 };
 </script>
 
 <template>
-  <input v-model="search" placeholder="Procure pelo título do post..." />
-  <div id="lista-posts">
-    <div class="post" v-for="post in filteredPosts" :key="post.key">
-      <h3>{{ post.title }}</h3>
-      <h4>{{ post.datetime }}</h4>
-      <p>{{ post.content }}</p>
-    </div>
-  </div>
+  <RouterLink to="/">Home</RouterLink>
+  <RouterLink to="/create">Novo Post</RouterLink>
 
-  <form>
-    <input v-model="formData.title" placeholder="Título" />
-
-    <textarea
-      name="content"
-      :value="formData.content"
-      @keyup="handleInputChange"
-      placeholder="Escreva seu post aqui..."
-      id=""
-      cols="30"
-      rows="10"
-    ></textarea>
-
-    <button type="button" @click="handleClick">Salvar</button>
-  </form>
-
-  <RouterView />
+  <RouterView :posts="posts" @create-post="addPost" />
 </template>
 
-<style scoped>
-form {
-  display: flex;
-  flex-direction: column;
-  background: orange;
-}
-
-form > * {
-  margin: 1rem;
-}
-
-button {
-  color: green;
-}
-</style>
+<style scoped></style>
