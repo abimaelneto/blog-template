@@ -1,0 +1,34 @@
+:root {
+  --header-height: 2rem;
+}
+
+header {
+  background-color: lightcoral;
+
+  position: fixed;
+
+  height: var(--header-height);
+  width: 100vw;
+}
+
+html,
+body,
+main {
+  height: 100vh;
+  width: 100vw;
+}
+
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding-top: var(--header-height);
+  overflow-y: auto;
+}
+
+footer {
+}
