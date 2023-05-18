@@ -23,11 +23,13 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
+  background: green;
 }
 
 main {
   padding-top: var(--header-height);
   overflow-y: auto;
+  background: blue;
 }
 
 footer {
