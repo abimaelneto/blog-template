@@ -17,10 +17,15 @@ export default {
 </script>
 
 <template>
-  <RouterLink to="/">Home</RouterLink>
-  <RouterLink to="/create">Novo Post</RouterLink>
-
-  <RouterView :posts="posts" @create-post="addPost" />
+  <header>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/create">Novo Post</RouterLink>
+    </nav>
+  </header>
+  <main>
+    <RouterView :posts="posts" @create-post="addPost" />
+  </main>
 </template>
 
 <style scoped></style>
