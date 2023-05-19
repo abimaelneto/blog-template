@@ -2,13 +2,29 @@
   --header-height: 2rem;
 }
 
+a {
+  text-decoration: none;
+  color: unset;
+}
+
 header {
-  background-color: lightcoral;
+  background-color: black;
+  color: white;
 
   position: fixed;
 
   height: var(--header-height);
   width: 100vw;
+
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
 }
 
 html,
@@ -23,13 +39,12 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  background: green;
+  background: #fafafa;
 }
 
 main {
   padding-top: var(--header-height);
   overflow-y: auto;
-  background: blue;
 }
 
 footer {
