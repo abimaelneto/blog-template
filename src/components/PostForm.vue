@@ -45,11 +45,6 @@ export default {
         this.$emit("create-post", postData);
       }
 
-      // this.formData = {
-      //   title: "",
-      //   content: "",
-      // };
-
       this.$router.push("/");
     },
   },
