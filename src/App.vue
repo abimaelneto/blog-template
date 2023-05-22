@@ -15,6 +15,11 @@ export default {
           datetime: "18/5/2023",
           content: "Conteúdo magnífico, estupendo e supimpa.",
         },
+        {
+          title: "Meu Terceiro Post",
+          datetime: "1/5/2023",
+          content: "Olá, sou um exemplo!",
+        },
       ],
     };
   },
@@ -25,6 +30,19 @@ export default {
     },
     updatePost(updatedPost, id) {
       this.posts[id] = updatedPost;
+    },
+    removePost(id) {
+      //como remover um post do array this.posts
+      const minhaNovaLista = [];
+
+      for (const index in this.posts) {
+        if (index == id) {
+          continue;
+        }
+        const post = this.posts[index];
+        minhaNovaLista.push(post);
+      }
+      this.posts = minhaNovaLista;
     },
   },
 };
@@ -38,7 +56,12 @@ export default {
     </nav>
   </header>
   <main>
-    <RouterView :posts="posts" @create-post="addPost" @edit-post="updatePost" />
+    <RouterView
+      :posts="posts"
+      @create-post="addPost"
+      @edit-post="updatePost"
+      @delete-post="removePost"
+    />
   </main>
 </template>
 
